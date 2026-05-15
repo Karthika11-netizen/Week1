@@ -1,0 +1,16 @@
+CREATE DATABASE Business;
+USE Business;
+CREATE TABLE employees( Id INT, Name VARCHAR(200), Salary BIGINT);
+INSERT INTO employees VALUES(1, "Harish", 40000),(2,"Rahul",50000),(2,"Seetha", 70000);
+SET SQL_SAFE_UPDATES = 0;
+UPDATE employees SET Salary=80000 WHERE Id=2;
+DELETE FROM employees WHERE Id=3; 
+SELECT Name,Salary FROM employees;
+SELECT Name FROM employees WHERE Salary>50000;
+SELECT * FROM employees WHERE Salary BETWEEN 10000 AND 65000;
+SELECT * FROM employees WHERE Name LIKE "_a%";
+ALTER TABLE employees ADD COLUMN City VARCHAR(250);
+UPDATE employees SET City = "Chennai" WHERE Id=1;
+UPDATE employees SET City = "Selam" WHERE Id=2;
+INSERT INTO employees VALUES(3,"Preeti",45000,"Madurai");
+SELECT * FROM employees WHERE City IN("Chennai","Madurai");
